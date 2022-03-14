@@ -28,7 +28,7 @@ function NewPonyTFoot({onUpdate}) {
     const [newBirthday, setNewBirthday] = useState("")
     const handleAddPony = event => {
         event.preventDefault();
-        addPony(newName, newBirthday)
+        addPony(newName, new Date(newBirthday))
             .then(() => onUpdate())
             .catch(error => console.error(error));
     }
