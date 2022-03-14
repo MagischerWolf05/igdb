@@ -1,0 +1,43 @@
+=== IGDB
+
+Game
+
+[plantuml]
+-----
+@startuml
+Class Game{
++id
++Name
++ReleaseDate
++Publisher
++GameDirector
++Downloads
++price
++Crossplay
++platfrom
++Category
++Size
+}
+Enum category{
++Category
+}
+
+class Publisher{
++id
++name
++Employees
++MarketCap
++CEO
+}
+class Platform{
++id
++Name
++players
+
+}
+Game -- category
+Game "m" -- "m" Platform
+Game "m" -- "1" Publisher
+@enduml
+
+-----
