@@ -5,6 +5,9 @@ Game
 [plantuml]
 -----
 @startuml
+
+
+
 Class Game{
 +id
 +Name

@@ -1,0 +1,78 @@
+= igdb
+:doctype: article
+:sectnums:
+:toc:
+
+Modul 227
+
+== Klassendiagramm
+[plantuml]
+-----
+@startuml
+Class Game{
++id
++Name
++ReleaseDate
++Publisher
++GameDirector
++Downloads
++price
++Crossplay
++platfrom
++Category
++Size
+}
+Enum category{
++Category
+}
+class Publisher{
++id
++name
++Employees
++MarketCap
++CEO
+}
+class Platform{
++id
++Name
++players
+}
+Game -- category
+Game "m" -- "m" Platform
+Game "m" -- "1" Publisher
+@enduml
+-----
+
+
+
+
+== Usecases
+
+.Usecasediagramm von IGDB
+[plantuml]
+----
+class b
+----
+
+== UC-1 Developer
+Ich will den Developer von einem Spiel anzeigen lassen.
+
+Ich will alle Games von einem Developer sehen.
+
+=== Sequenz
+
+== UC-2 Platformen
+Ich will von jedem Game die verfügbaren Platformen sehen.
+
+Ich will von jeder Platform alle Games sehen.
+
+=== Sequenz
+
+== Game
+
+Ich will von jedem Game die Spieleranzahl sehen.
+
+Ich will von jedem Game die Bewertung sehen
+
+
+
