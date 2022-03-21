@@ -71,13 +71,14 @@ components:
         Name:
           type: string
         ReleaseDate:
-          type: Date
+          type: string
+          format: date-time
         Publisher:
           type: integer
         Downloads:
           type: integer
         Price:
-          type: double
+          type: number
         Crossplay:
           type: boolean
         Platforms:
@@ -85,10 +86,10 @@ components:
         Category:
           type: integer
         Size:
-          type: double
+          type: number
     Publisher:
       required:
-        -name
+        - name
       properties:
         name:
           type: string
