@@ -9,7 +9,7 @@ paths:
   /games:
     get:
       summary: List all games
-      operationId: getGames
+      operationId: GetGames
       responses:
         200:
           description: Array of Game objects
@@ -19,6 +19,76 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/Game"
+    post:
+      summary: Add Game
+      operationId: AddGame
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Game"
+      responses:
+        201:
+          description: added the game
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Game"
+  /publishers:
+    get:
+      summary: list all Publishers
+      operationId: GetPublishers
+      responses:
+        200:
+          description: Array of Publisher objects
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Publisher"
+    post:
+      summary: Add publisher
+      operationId: AddPublisher
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Publisher"
+      responses:
+        201:
+          description: added the publisher
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Publisher"
+  /publishers/{id}:
+    get:
+      summary: Get Publisher by id
+      operationId: GetPublisherById
+      parameters:
+        - name: id
+          in: path
+          description: the id of the Publisher
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        200:
+          description: Get one Publisher object if found
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Publisher"
+        400:
+          description: No publisher Found
+
+
+
+
 
   /ponies:
     get:
@@ -61,11 +131,12 @@ components:
   schemas:
     Game:
       required:
+        - Id
         - Name
-        - Category
-        - Size
+        - Publisher
+        - ReleaseDate
       properties:
-        id:
+        Id:
           type: integer
           readOnly: true
         Name:
@@ -73,7 +144,11 @@ components:
         ReleaseDate:
           type: string
           format: date-time
+        PublisherID:
+          type: integer
         Publisher:
+          $ref: "#components/schemas/Publisher"
+        Rating:
           type: integer
         Downloads:
           type: integer
@@ -82,17 +157,37 @@ components:
         Crossplay:
           type: boolean
         Platforms:
-          type: integer
+          type: array
+          items:
+            $ref: "#components/schemas/Platform"
         Category:
           type: integer
         Size:
           type: number
     Publisher:
       required:
-        - name
+        - Name
+        - Id
       properties:
-        name:
+        Id:
+          type: integer
+        Name:
           type: string
+        MarketCap:
+          type: string
+        Rating:
+          type: integer
+    Platform:
+      required:
+        - Id
+        - Name
+      properties:
+        Id:
+          type: integer
+        Name:
+          type: string
+        Players:
+          type: integer
     PonyDto:
       required:
         - name

@@ -54,25 +54,39 @@ Game "m" -- "1" Publisher
 class b
 ----
 
-== UC-1 Developer
+=== UC-1 Developer
 Ich will den Developer von einem Spiel anzeigen lassen.
 
 Ich will alle Games von einem Developer sehen.
 
-=== Sequenz
+==== Sequenz
 
-== UC-2 Platformen
+=== UC-2 Platformen
 Ich will von jedem Game die verfügbaren Platformen sehen.
 
 Ich will von jeder Platform alle Games sehen.
 
-=== Sequenz
+==== Sequenz
 
-== Game
+=== Game
 
 Ich will von jedem Game die Spieleranzahl sehen.
 
-Ich will von jedem Game die Bewertung sehen
+Ich will von jedem Game die Bewertung sehen.
 
+==== Sequenz
 
+== Test Case
+table mit
 
+Beschreibung
+
+Vorbedingungen
+
+Testcase mit schritten
+
+Ergebnis
+
+== Objektanalyse
+
+Mit Funktionen und so
