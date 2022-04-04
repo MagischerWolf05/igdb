@@ -35,6 +35,40 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Game"
+    put:
+      summary: Update a Game
+      operationId: updateGame
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Game"
+      responses:
+        201:
+          description: updated the game
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Game"
+  /games/{id}:
+    delete:
+      summary: delete Game by id
+      operationId: deleteGame
+      parameters:
+        - name: id
+          in: path
+          description: the id of the Publisher
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        200:
+          description: successful
+        400:
+          description: No Game Found
+
   /publishers:
     get:
       summary: list all Publishers
@@ -64,6 +98,23 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Publisher"
+    put:
+      summary: Update a publisher
+      operationId: updatePublisher
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Publisher"
+      responses:
+        201:
+          description: updated the publisher
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Publisher"
+
   /publishers/{id}:
     get:
       summary: Get Publisher by id
@@ -85,10 +136,22 @@ paths:
                 $ref: "#/components/schemas/Publisher"
         400:
           description: No publisher Found
-
-
-
-
+    delete:
+      summary: delete Publisher by id
+      operationId: deletePublisher
+      parameters:
+        - name: id
+          in: path
+          description: the id of the Publisher
+          required: true
+          schema:
+            type: integer
+            format: int32
+      responses:
+        200:
+          description: successful
+        400:
+          description: No publisher Found
 
   /ponies:
     get:
@@ -134,12 +197,15 @@ components:
         - Id
         - Name
         - Publisher
+        - Image
         - ReleaseDate
       properties:
         Id:
           type: integer
           readOnly: true
         Name:
+          type: string
+        Image:
           type: string
         ReleaseDate:
           type: string
