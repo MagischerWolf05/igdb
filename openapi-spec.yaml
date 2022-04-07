@@ -196,24 +196,22 @@ components:
       required:
         - Id
         - Name
-        - Publisher
+        - PublisherIDs
         - Image
-        - ReleaseDate
+        - Rating
       properties:
         Id:
           type: integer
-          readOnly: true
         Name:
           type: string
         Image:
           type: string
         ReleaseDate:
           type: string
-          format: date-time
+          pattern: "^(3[01]|[12][0-9]|0[1-9])-(1[0-2]|0[1-9])-[0-9]{4}$"
+          example: "2019-05-17"
         PublisherID:
           type: integer
-        Publisher:
-          $ref: "#components/schemas/Publisher"
         Rating:
           type: integer
         Downloads:
@@ -222,12 +220,16 @@ components:
           type: number
         Crossplay:
           type: boolean
+        PlatformIDs:
+          type: array
+          items:
+            type: integer
         Platforms:
           type: array
           items:
-            $ref: "#components/schemas/Platform"
+            $ref: "#/components/schemas/Platform"
         Category:
-          type: integer
+          $ref: "#/components/schemas/Category"
         Size:
           type: number
     Publisher:
@@ -241,8 +243,6 @@ components:
           type: string
         MarketCap:
           type: string
-        Rating:
-          type: integer
     Platform:
       required:
         - Id
@@ -254,6 +254,13 @@ components:
           type: string
         Players:
           type: integer
+    Category:
+      type: string
+      enum:
+        - Action
+        - Adventure
+        - Fantasy
+        - Shooter
     PonyDto:
       required:
         - name
