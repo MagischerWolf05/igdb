@@ -39,7 +39,7 @@ public class PublisherController implements PublishersApi {
 
     private void save(){
         try {
-            new ObjectMapper().writeValue(publisherFile, Publishers);
+            new ObjectMapper().writerWithDefaultPrettyPrinter().writeValue(publisherFile, Publishers);
         }
         catch (Exception e){
             System.out.println("Could not save Games");
@@ -59,7 +59,7 @@ public class PublisherController implements PublishersApi {
     @Override
     public ResponseEntity<Void> deletePublisher(Integer id) {
         for (int i = 0; i< Publishers.size(); i++ ) {
-            if(Publishers.get(i).getId() == id){
+            if(Objects.equals(Publishers.get(i).getId(), id)){
                 Publishers.remove(i);
                 save();
                 return ResponseEntity.status(HttpStatus.OK).body(null);
@@ -86,7 +86,7 @@ public class PublisherController implements PublishersApi {
 
     @Override
     public ResponseEntity<Publisher> updatePublisher(Publisher publisher) {
-        for (int i = 0; i > Publishers.size(); i++) {
+        for (int i = 0; i < Publishers.size(); i++) {
             var possiblePublisher = Publishers.get(i);
             if(possiblePublisher.getId().equals(publisher.getId())){
                 var id = possiblePublisher.getId();

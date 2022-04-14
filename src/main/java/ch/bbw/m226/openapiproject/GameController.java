@@ -66,10 +66,10 @@ public class GameController implements GamesApi {
             var game = gameSave.get(i);
             platforms.put(game.getId(), game.getPlatforms());
             game.setPlatformIDs(game.getPlatforms().stream().map(Platform::getId).toList());
-            game.setPlatforms(null);
+            game.setPlatforms(List.of());
         }
         try {
-            new ObjectMapper().writeValue(gameFile, gameSave);
+            new ObjectMapper().writerWithDefaultPrettyPrinter().writeValue(gameFile, gameSave);
             for (int i = 0; i < Games.size(); i++) {
                 var game = Games.get(i);
                 game.setPlatforms(platforms.get(game.getId()));
@@ -90,9 +90,10 @@ public class GameController implements GamesApi {
         //sets platform objects
         var gamePlatforms = getPlatforms(game.getPlatformIDs());
         game.setPlatforms(gamePlatforms);
+
         Games.add(game); // yolo ignoring conflicts
         save();
-        return ResponseEntity.status(HttpStatus.OK)
+        return ResponseEntity.status(HttpStatus.CREATED)
                 .body(game);
         //return null;
     }
@@ -100,7 +101,7 @@ public class GameController implements GamesApi {
     @Override
     public ResponseEntity<Void> deleteGame(Integer id) {
         for (int i = 0; i< Games.size(); i++ ) {
-            if(Games.get(i).getId() == id){
+            if(Objects.equals(Games.get(i).getId(), id)){
                 Games.remove(i);
                 save();
                 return ResponseEntity.status(HttpStatus.OK).body(null);
@@ -117,7 +118,7 @@ public class GameController implements GamesApi {
 
     @Override
     public ResponseEntity<Game> updateGame(Game game) {
-        for (int i = 0; i > Games.size(); i++) {
+        for (int i = 0; i < Games.size(); i++) {
             var possibleGame = Games.get(i);
             if(possibleGame.getId().equals(game.getId())){
                 var id = possibleGame.getId();
@@ -125,6 +126,7 @@ public class GameController implements GamesApi {
                 possibleGame.setId(id);
                 //save
                 possibleGame.setPlatformIDs(possibleGame.getPlatforms().stream().map(Platform::getId).toList());
+                possibleGame.setPlatforms(List.of());
                 save();
                 return ResponseEntity.status(HttpStatus.OK)
                         .body(possibleGame);

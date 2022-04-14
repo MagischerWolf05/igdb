@@ -1,1 +1,29 @@
-[{"Id":1775840621,"Name":"Destiny","Image":"string","ReleaseDate":"09-09-2014","PublisherID":617759365,"Rating":5,"Downloads":13000000,"Price":60,"Crossplay":false,"PlatformIDs":[718719273],"Platforms":null,"Category":"Fantasy","Size":55}]
+[ {
+  "Id" : 1775840621,
+  "Name" : "Destiny",
+  "Image" : "string",
+  "ReleaseDate" : "09-09-2014",
+  "PublisherID" : 617759365,
+  "Rating" : 5,
+  "Downloads" : 13000000,
+  "Price" : 60,
+  "Crossplay" : false,
+  "PlatformIDs" : [ 718719273 ],
+  "Platforms" : [ ],
+  "Category" : "Fantasy",
+  "Size" : 55
+}, {
+  "Id" : 2094626886,
+  "Name" : "Willy57cd6ce4-25d2-43ce-ac66-2ed0c4654b83",
+  "Image" : "test",
+  "ReleaseDate" : "07-08-2022",
+  "PublisherID" : 617759365,
+  "Rating" : 5,
+  "Downloads" : 120000,
+  "Price" : 12.5,
+  "Crossplay" : null,
+  "PlatformIDs" : [ 718719273 ],
+  "Platforms" : [ ],
+  "Category" : "Action",
+  "Size" : 24.5
+} ]

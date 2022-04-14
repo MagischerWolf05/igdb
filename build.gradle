@@ -88,3 +88,7 @@ sourceSets {
 		}
 	}
 }
+
+tasks.withType(JavaCompile) {
+	options.incremental = false
+}

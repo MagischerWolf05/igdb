@@ -45,7 +45,7 @@ paths:
             schema:
               $ref: "#/components/schemas/Game"
       responses:
-        201:
+        200:
           description: updated the game
           content:
             application/json:
@@ -194,7 +194,6 @@ components:
   schemas:
     Game:
       required:
-        - Id
         - Name
         - PublisherIDs
         - Image
@@ -202,10 +201,13 @@ components:
       properties:
         Id:
           type: integer
+          example: 189375629
         Name:
           type: string
+          example: Mario Kart
         Image:
           type: string
+          example: https://th.bing.com/th/id/R.b080dc89a6ec65bab84b45aa087b2a86?rik=h0R7Q2oMKzFomQ&riu=http%3a%2f%2fassets2.ignimgs.com%2f2014%2f12%2f09%2fmario-kart-8jpg-877534.jpg&ehk=Yv%2b8wNGdMDe77xNWNcJ4o%2bJLllG%2bPLfEfrfMtrgww7A%3d&risl=&pid=ImgRaw&r=0
         ReleaseDate:
           type: string
           pattern: "^(3[01]|[12][0-9]|0[1-9])-(1[0-2]|0[1-9])-[0-9]{4}$"
@@ -214,12 +216,16 @@ components:
           type: integer
         Rating:
           type: integer
+          example: 5
         Downloads:
           type: integer
+          example: 120000
         Price:
           type: number
+          example: 75.5
         Crossplay:
           type: boolean
+          example: true
         PlatformIDs:
           type: array
           items:
@@ -232,6 +238,7 @@ components:
           $ref: "#/components/schemas/Category"
         Size:
           type: number
+          example: 56
     Publisher:
       required:
         - Name
@@ -239,10 +246,13 @@ components:
       properties:
         Id:
           type: integer
+          example: 18293873
         Name:
           type: string
+          example: Activision
         MarketCap:
           type: string
+          example: 12 Million
     Platform:
       required:
         - Id
@@ -250,10 +260,13 @@ components:
       properties:
         Id:
           type: integer
+          example: 217287864
         Name:
           type: string
+          example: Playstation 4
         Players:
           type: integer
+          example: 1200000
     Category:
       type: string
       enum:
