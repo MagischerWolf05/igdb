@@ -1,56 +1,44 @@
-import {Button, Container, Form, Image, Navbar, Table} from "react-bootstrap";
+import {Button, Container,Row,Col, Card,Form, Image, Navbar, Table} from "react-bootstrap";
 import logo from './logo.png'
 import {useEffect, useState} from "react";
-import {getPonies, addPony} from "./Api";
+import GameGetter, {Person} from "./Api";
+import Navheader from "./navbarheader";
 
 function PonyTBody({versionId}) {
-    const [ponies, setPonies] = useState([])
-    useEffect(() => {
-        getPonies()
-            .then(data => setPonies(data))
-            .catch(error => console.error(error));
-    }, [versionId])
     return (
-        <tbody>
-        {ponies.map(ponyDto => {
-            return <tr key={ponyDto.id}>
-                <td>{ponyDto.name}</td>
-                <td>{ponyDto.birthday.toISOString().split("T")[0]}</td>
-                <td>{ponyDto.id}</td>
-            </tr>
-        })}
-        </tbody>
+        <Container>
+            <Row>
+                <GameGetter/>
+            </Row>
+        </Container>
     )
 }
 
-function NewPonyTFoot({onUpdate}) {
-    const [newName, setNewName] = useState("")
-    const [newBirthday, setNewBirthday] = useState("")
-    const handleAddPony = event => {
-        event.preventDefault();
-        addPony(newName, new Date(newBirthday))
-            .then(() => onUpdate())
-            .catch(error => console.error(error));
-    }
-    return (
-        <tfoot>
-        <tr>
-            <td>
-                <Form.Label className="visually-hidden" htmlFor="inputPonyName">Ponyname</Form.Label>
-                <Form.Control id="inputPonyName" placeholder="Dixie" value={newName} onChange={e => setNewName(e.target.value)} />
-            </td>
-            <td>
-                <Form.Label className="visually-hidden" htmlFor="inputPonyBirthday">Birthday</Form.Label>
-                <Form.Control id="inputPonyBirthday" placeholder="2000-01-31" value={newBirthday}
-                              onChange={e => setNewBirthday(e.target.value)} />
-            </td>
-            <td>
-                <Button type="submit" variant="secondary" onClick={handleAddPony}>Add Pony</Button>
-            </td>
-        </tr>
-        </tfoot>
-    )
-}
+// function NewPonyTFoot({onUpdate}) {
+//     const [newName, setNewName] = useState("")
+//     const [newBirthday, setNewBirthday] = useState("")
+//     const handleAddPony = event => {
+//         event.preventDefault();
+//
+//     }
+//     return (
+//         <tr>
+//             <td>
+//                 <Form.Label className="visually-hidden" htmlFor="inputPonyName">Ponyname</Form.Label>
+//                 <Form.Control id="inputPonyName" placeholder="Dixie" value={newName} onChange={e => setNewName(e.target.value)} />
+//             </td>
+//             <td>
+//                 <Form.Label className="visually-hidden" htmlFor="inputPonyBirthday">Birthday</Form.Label>
+//                 <Form.Control id="inputPonyBirthday" placeholder="2000-01-31" value={newBirthday}
+//                               onChange={e => setNewBirthday(e.target.value)} />
+//             </td>
+//             <td>
+//                 <Button type="submit" variant="secondary" onClick={handleAddPony}>Add Pony</Button>
+//             </td>
+//         </tr>
+//
+//     )
+// }
 
 function PonyTable() {
     const [id, setId] = useState(0)
@@ -58,34 +46,20 @@ function PonyTable() {
         setId(id + 1);
     }
     return (
-        <Table striped hover>
-            <thead>
-            <tr>
-                <th>Name</th>
-                <th>Birthday</th>
-                <th>ID</th>
-            </tr>
-            </thead>
-            <PonyTBody versionId={id} />
-            <NewPonyTFoot onUpdate={onUpdate} />
-        </Table>
+        <div>
+            <h2 >Newest</h2>
+
+
+
+            <PonyTBody/>
+        </div>
     )
 }
 
 function App() {
     return (
         <>
-            <Navbar bg="light">
-                <Container>
-                    <Navbar.Brand>
-                        <Image src={logo} alt="" width={48} height={48} />{' '}
-                        Ponyhof
-                    </Navbar.Brand>
-                    <Navbar.Text>
-                        <a href="http://localhost:8080/api/swagger-ui/index.html">API {">>"}</a>
-                    </Navbar.Text>
-                </Container>
-            </Navbar>
+            <Navheader/>
             <Container>
                 <PonyTable />
             </Container>

@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Validated
 @RestController
-public class PonyController implements PoniesApi {
+public class 	PonyController implements PoniesApi {
 
 	private final Map<Integer, PonyDto> ponies = new HashMap<>();
 
