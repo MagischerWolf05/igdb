@@ -127,6 +127,7 @@ public class GameController implements GamesApi {
                 //save
                 possibleGame.setPlatformIDs(possibleGame.getPlatforms().stream().map(Platform::getId).toList());
                 possibleGame.setPlatforms(List.of());
+                Games.set(i, possibleGame);
                 save();
                 return ResponseEntity.status(HttpStatus.OK)
                         .body(possibleGame);
