@@ -79,14 +79,15 @@ const DescriptionRenderer = ({ field }) => <textarea {...field} />;
                 ...task,
                 id: count,
             });
-
             return Promise.resolve(test.addGame(task));
         },
         update: (data) => {
-            let task = games.find(t => t.id === data.id);
-            task = data;
-
-            return Promise.resolve(test.updateGame(task));
+            let b = games;
+            console.log(b[data.id -1]);
+            b[data.id -1] = data;
+            setGames(b)
+            test.updateGame(data)
+            return Promise.resolve(data)
         },
         delete: (data) => {
             const task = games.find(t => t.id === data.id);
@@ -101,21 +102,13 @@ const DescriptionRenderer = ({ field }) => <textarea {...field} />;
     };
 
     const Example = () => (
+        <>
+            <Navheader/>
         <div style={styles.container}>
             <CRUDTable
                 caption="games"
                 fetchItems={payload => service.fetchItems(payload)}
             >
-
-
-
-
-
-
-
-
-
-
 
                 <Fields>
                     <Field
@@ -129,9 +122,6 @@ const DescriptionRenderer = ({ field }) => <textarea {...field} />;
                         label="name"
                         placeholder="name"
                     />
-
-
-
 
 
                     <Field
@@ -221,6 +211,7 @@ const DescriptionRenderer = ({ field }) => <textarea {...field} />;
                 />
             </CRUDTable>
         </div>
+        </>
     );
     return <Example/>
 }
