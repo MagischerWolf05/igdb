@@ -77,21 +77,7 @@ const service = {
         const item = publisher.filter(x => x.id.toString()  == task.publisherID)
 
         task.publisher= item;
-task ={
-    "Id" : 1,
-    "Name" : "Hitman 3",
-    "Image" : "https://external-preview.redd.it/lbMBtOKuDxPEuuf3jV79T0fEwdwAMLqkAL7jSJ2kRCQ.jpg?auto=webp&s=854b92b2ec983b4e85e43e53966bcd91c0b77af6",
-    "ReleaseDate" : "20-01-2021",
-    "PublisherID" : 779233723,
-    "Rating" : 5,
-    "Downloads" : 70000000,
-    "Price" : 75,
-    "Crossplay" : false,
-    "PlatformIDs" : [ 1,2,3 ],
-    "Platforms" : [ ],
-    "Category" : "Stealth",
-    "Size" : 60
-};
+
         Addgame(task.name,task.image,task.date,parseInt(task.publisherID),parseInt(task.rating),parseInt(task.downloads), parseInt(task.price), task.crossplay === "True",[task.platform],Category.Action,parseInt(task.size),parseInt(task.id))
         // Simple POST request with a JSON body using fetch
 
