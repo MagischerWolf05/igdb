@@ -9,7 +9,9 @@ export default  function Navheader() {
         <Navbar bg="light">
             <Container>
                 <Navbar.Brand>
+                    <a href="./">
                     <Image src={logo} alt="" width={150} height={72}  />{' '}
+                    </a>
                 </Navbar.Brand>
                 <Navbar.Text>
                     <a href="./crud">Sign in</a>
