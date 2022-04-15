@@ -1,1 +1,7 @@
-  [{"Id":617759365,"Name":"Activision Blizzard","MarketCap":"62 Billion"}]
+  [
+    {"Id":617759365,"Name":"Activision Blizzard","MarketCap":"62 Billion"},
+    {"Id":779233723,"Name":"IO Interactive","MarketCap":"23 Billion"},
+    {"Id":456786545,"Name":"Rockstar Games","MarketCap":"15.9"},
+    {"Id":76878666,"Name":"Infinity Ward","MarketCap":"62 Billion"},
+    {"Id":78297437,"Name":"Nintendo","MarketCap":"104 Billion"}
+  ]

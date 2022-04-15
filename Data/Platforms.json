@@ -1,1 +1,5 @@
-[{"Id":718719273,"Name":"Playstation 4","Players": 116000000}]
+[
+  {"Id":1,"Name":"Playstation 4","Players": 116000000},
+  {"Id":2,"Name":"Xbox one","Players": 116000000},
+  {"Id":3,"Name":"PC","Players": 200000000}
+]
