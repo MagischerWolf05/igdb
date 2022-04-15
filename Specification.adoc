@@ -77,16 +77,11 @@ Ich will von jedem Game die Bewertung sehen.
 ==== Sequenz
 
 == Test Case
-table mit
 
-Beschreibung
-
-Vorbedingungen
-
-Testcase mit schritten
-
-Ergebnis
-
-== Objektanalyse
+path: /
+Auf dem Main window ist es so Das wen man auf das I bei einer Katrte drückt sollte Die Tabelle mit den Spezifikation des Objekts Auf kommen. Einfach alle Atribute
+Der Knopf Sign in wird dich auf das crud weiter leiten
+Path: /crud
+Beim crud werden alle Tablen angezeigt die man bearbeiten kann
 
 Mit Funktionen und so
