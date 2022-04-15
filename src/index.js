@@ -11,8 +11,7 @@ ReactDOM.render(
         <Routes>
             <Route path="/" element={<App />}/>
             <Route path="/crud" element={<Tablecrud/>} />
-            <Route path="/game/{id}" element={<Gameview/>} />
-            <Route  path="/game/:snackid" element={<Gameview/>} />
+            <Route  path="/game/:id" element={<Gameview/>} />
         </Routes>
     </BrowserRouter>
 , document.getElementById('root'));
