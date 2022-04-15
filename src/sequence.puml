@@ -1,0 +1,19 @@
+@startuml
+
+
+
+client -> api: request for all Games
+api --> client : api respnds with all games
+
+
+@enduml
+@startuml
+    client -> api: request for all Games
+    api --> client : api respnds with all api tables in diffrent tables
+    client -> api : Add a item to the table
+    api --> client : respondes with an error or nothing
+    client -> api : Update a item to the table
+    api --> client : respondes with an error or nothing
+    client -> api : delete a item to the table
+    api --> client : respondes with an error or nothing
+@enduml
