@@ -1,0 +1,41 @@
+= Rückmeldung & Selbsteinschätzung Projekt IGDB M226b / M326
+:doctype: article
+:sectnums:
+:toc:
+
+In diesem Projekt gingen wir an unsere Grenzen für eine Note und nichts anderes. Unsere Arbeit war nur durch den Wert der Schulnoten diktiert und hatte leider überhaupt nichts mit der Motivation zum Lernen / der Berufsneugier zu tun. Sie als Lehrperson sind jedoch sehr kompetent und diese Rückmeldung bezieht sich auf den Auftrag und das Erläutern, dass für dieses Projekt viel geopfert wurde. Diese Aufgabe war eine Treppenstufe mit langen, rostigen Nägeln die nur überwunden wurde um weiter zu kommen.
+
+=== Einsatz
+
+Nebst dem Unterricht haben wir auch in der Freizeit daran gearbeitet. Unsere geschätzte Note ohne das Verpassen von wohlverdienter Freizeit würde auf eine 3.5 hinauslaufen.
+
+Wir haben uns viel Mühe gegeben aber wären lieber mehrere Kilometer durch gebrochenes Glas gezogen worden.
+
+Wir lernten auch eher wenig. Das grösste, das wir lernten, war die Openapi spec mit Generierung & bessere API calls im Web.
+
+Der Einsatz vor den Ostern (Do. 14.4.2022) ist ein Beweis für unseren eisernen Durchhaltewillen.
+
+=== Was schief ging
+
+•	Typische React Probleme
+•   Npm Probleme, Dependencies nicht gefunden obwohl installiert.
+•	Dokumentieren
+•	Dumme IntelliJ Fehler. Startete nur etwa 5-mal pro Stunde erfolgreich (Snapshot und incremental compile)
+•	Motivation & generelle Desinteresse
+-	Sofortige Negative Reaktion auf Frontend / React Aufträge
+-	Genügend & Unnütze Webaufträge
+•	Unzufriedenheit mit dem Auftrag
+-	React Repetierung
+-	Mehrere Module sehr ähnliche Themen (226b/326/133)
+-	6 Monate ununterbrochen gearbeitet (Frust, Druck, Ausdauer, Hausaufgaben, konstante Spannung)
+-	Dokumentieren
+
+=== Was gut ging
+Das Projekt funktionierte auf unseren Laptops mindestens einmal.
+Backend mit Referenzen geht.
+
+=== Selbsteinschätzung:
+Wir würden uns geschätzt einen 5-5.5er geben, da wir viele Klassen haben und diese auch darstellen können.
+Das UI sieht etwa wie geplant aus und wir haben nur kleine Fehler mit der verbindung zur API.
+Wir haben wirklich viel un intensiv daran gearbeitet.
+Diese Aufgabe ein zweites Mal zu machen, würden wir klar verweigern. Wir tauschen unsere Gesundheit nicht gerne für weniger. Das mindeste was wir erreichen wollen, ist eine Note, die unseren Durchschnitt nicht zu fest negativ beeinflusst und dass wir diese Aufgabe einfach vergessen können.
